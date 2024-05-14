@@ -125,4 +125,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+CORS_ALLOWED_ORIGINS = [
+    
+   'localhost','https://vercel.com/alejandros-projects-30c19e38/taller-frontend',
+   
+]
