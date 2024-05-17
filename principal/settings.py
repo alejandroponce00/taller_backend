@@ -11,11 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hv4-75-a4ntg2!^uo7gqrnbx9e-3up^qczd^svi$!!7&9n$iwd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -42,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    
      "corsheaders",
     'taller',
     'rest_framework',
@@ -85,8 +78,10 @@ WSGI_APPLICATION = 'principal.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-    
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
@@ -132,12 +127,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     
-    'https://taller-frontend-ojtew8esq-alejandros-projects-30c19e38.vercel.app/'
+    "http://localhost:3000",
    
 ]
-ALLOWED_HOSTS= [
-   'localhost', 'https://tallerbackend-production.up.railway.app/'
-]
-
-
-CSRF_TRUSTED_ORIGINS =['http://*','https://tallerbackend-production.up.railway.app/']
