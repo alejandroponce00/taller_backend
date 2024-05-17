@@ -127,10 +127,12 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     
-    'https://taller-frontend-ojtew8esq-alejandros-projects-30c19e38.vercel.app/',
+    'https://taller-frontend-ojtew8esq-alejandros-projects-30c19e38.vercel.app/'
    
 ]
 ALLOWED_HOSTS= [
    'localhost', 'https://tallerbackend-production.up.railway.app/'
 ]
 
+
+CSRF_TRUSTED_ORIGINS =['http://*','https://tallerbackend-production.up.railway.app/']
