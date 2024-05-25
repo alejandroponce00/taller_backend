@@ -1,0 +1,1 @@
+web: gunicorn principal.wsgi
